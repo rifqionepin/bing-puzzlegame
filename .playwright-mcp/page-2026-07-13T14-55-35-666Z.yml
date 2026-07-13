@@ -1,0 +1,11 @@
+- generic [ref=e22]:
+  - generic [ref=e23]:
+    - button "←" [ref=e24] [cursor=pointer]
+    - generic [ref=e25]: Bing Football
+  - generic [ref=e26]:
+    - generic [ref=e27]:
+      - generic [ref=e28]: "?"
+      - generic [ref=e29]: "?"
+      - generic [ref=e30]: "?"
+      - generic [ref=e31]: "?"
+    - generic [ref=e32]: Pieces

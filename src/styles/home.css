@@ -1,0 +1,93 @@
+.home {
+  padding: 20px 16px 32px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.home-header h1 {
+  font-size: 2rem;
+  color: #FF9800;
+  text-shadow: 2px 2px 0 #F57C00;
+  letter-spacing: 1px;
+}
+
+.home-header p {
+  color: #888;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.puzzle-card {
+  background: #FFF;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.puzzle-card:active {
+  transform: scale(0.96);
+}
+
+.puzzle-card-thumb {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: #F5F5F5;
+}
+
+.puzzle-card-title {
+  padding: 12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.home-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.home-empty h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.admin-link {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 24px;
+  background: #FF9800;
+  color: #FFF;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.home-footer {
+  text-align: center;
+  margin-top: 32px;
+}
+
+@media (max-width: 360px) {
+  .puzzle-grid {
+    gap: 10px;
+  }
+  .home-header h1 {
+    font-size: 1.6rem;
+  }
+}

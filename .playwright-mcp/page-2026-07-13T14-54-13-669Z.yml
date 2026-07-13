@@ -1,0 +1,18 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - heading "Bing Puzzle" [level=1] [ref=e5]
+    - paragraph [ref=e6]: Pick a puzzle to play!
+  - generic [ref=e7]:
+    - generic [ref=e8] [cursor=pointer]:
+      - img "Bing Football" [ref=e9]
+      - generic [ref=e10]: Bing Football
+    - generic [ref=e11] [cursor=pointer]:
+      - img "Bing Ice Cream" [ref=e12]
+      - generic [ref=e13]: Bing Ice Cream
+    - generic [ref=e14] [cursor=pointer]:
+      - img "Bing Sleep" [ref=e15]
+      - generic [ref=e16]: Bing Sleep
+    - generic [ref=e17] [cursor=pointer]:
+      - img "Bing Play" [ref=e18]
+      - generic [ref=e19]: Bing Play
+  - button "Admin Panel" [ref=e21] [cursor=pointer]

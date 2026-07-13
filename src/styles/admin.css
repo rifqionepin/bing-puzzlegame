@@ -1,0 +1,222 @@
+.admin-login {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.admin-login-card {
+  background: #FFF;
+  border-radius: 20px;
+  padding: 32px;
+  width: 100%;
+  max-width: 340px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.admin-login-card h1 {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.admin-login-card input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #E0E0E0;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+
+.admin-login-card input:focus {
+  border-color: #FF9800;
+}
+
+.admin-login-card button {
+  width: 100%;
+  padding: 12px;
+  background: #FF9800;
+  color: #FFF;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.admin-login-error {
+  color: #F44336;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.admin-panel {
+  padding: 20px 16px 32px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.admin-header h1 {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.admin-btn-back {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #F5F5F5;
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.admin-section {
+  background: #FFF;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.admin-section h2 {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.admin-form-group {
+  margin-bottom: 14px;
+}
+
+.admin-form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.admin-form-group input[type="text"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #E0E0E0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.admin-form-group input[type="text"]:focus {
+  border-color: #FF9800;
+}
+
+.admin-form-group input[type="file"] {
+  width: 100%;
+  padding: 10px 0;
+  font-family: inherit;
+}
+
+.admin-upload-preview {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 8px;
+  background: #F5F5F5;
+}
+
+.admin-btn-save {
+  padding: 10px 28px;
+  background: #FF9800;
+  color: #FFF;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.admin-btn-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-puzzle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-puzzle-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #FAFAFA;
+  border-radius: 12px;
+}
+
+.admin-puzzle-item-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #F0F0F0;
+}
+
+.admin-puzzle-item-title {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.admin-puzzle-item-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #E0E0E0;
+  color: #888;
+}
+
+.admin-btn-delete {
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: #FFEBEE;
+  color: #F44336;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.admin-btn-reset {
+  padding: 8px 20px;
+  border-radius: 20px;
+  background: #F5F5F5;
+  color: #F44336;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.admin-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #FFF;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 300;
+  animation: fadeIn 0.3s ease;
+}

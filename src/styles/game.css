@@ -1,0 +1,227 @@
+.game {
+  padding: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.game-back {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFF;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #FF9800;
+  font-weight: 700;
+}
+
+.game-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #555;
+}
+
+.game-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  background: #E0E0E0;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  width: 100%;
+}
+
+.drop-zone {
+  background: #FFF;
+  position: relative;
+  overflow: hidden;
+  min-height: 80px;
+}
+
+.drop-zone.filled {
+  background: transparent;
+}
+
+.drop-zone-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #CCC;
+  font-size: 1.5rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.piece-pool {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 12px;
+  background: #FFF;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.piece-pool-label {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #AAA;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.puzzle-piece {
+  width: 100%;
+  aspect-ratio: 1;
+  background-size: 200% 200%;
+  border-radius: 8px;
+  cursor: grab;
+  touch-action: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.15s;
+  position: relative;
+}
+
+.puzzle-piece:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+
+.puzzle-piece.dragging-source {
+  visibility: hidden;
+}
+
+.puzzle-piece.dragging {
+  z-index: 100;
+  position: fixed;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  border-radius: 12px;
+}
+
+.piece-slot {
+  width: 100%;
+  aspect-ratio: 1;
+  background-size: 200% 200%;
+  border-radius: 8px;
+}
+
+.game-complete-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.4);
+  animation: fadeIn 0.3s ease;
+}
+
+.game-complete-card {
+  background: #FFF;
+  border-radius: 24px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.game-complete-card h2 {
+  font-size: 1.8rem;
+  color: #FF9800;
+  margin-bottom: 8px;
+}
+
+.game-complete-card p {
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.game-complete-card button {
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 6px;
+}
+
+.btn-primary {
+  background: #FF9800;
+  color: #FFF;
+}
+
+.btn-secondary {
+  background: #F5F5F5;
+  color: #888;
+}
+
+.confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 201;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@media (min-width: 600px) {
+  .game-area {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .puzzle-grid {
+    flex: 1;
+    max-width: 350px;
+  }
+  .piece-pool {
+    flex: 0 0 180px;
+    align-self: stretch;
+  }
+}
