@@ -13,7 +13,15 @@ function loadCustomPuzzles() {
 }
 
 function saveCustomPuzzles(puzzles) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(puzzles))
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(puzzles))
+    return true
+  } catch (e) {
+    if (e.name === 'QuotaExceededError' || e.code === 22) {
+      return false
+    }
+    throw e
+  }
 }
 
 export function usePuzzles() {
@@ -33,9 +41,11 @@ export function usePuzzles() {
     const id = 'custom_' + Date.now()
     const newPuzzle = { id, title, image: imageDataUrl }
     const updated = [...customPuzzles, newPuzzle]
-    setCustomPuzzles(updated)
-    saveCustomPuzzles(updated)
-    return newPuzzle
+    const saved = saveCustomPuzzles(updated)
+    if (saved) {
+      setCustomPuzzles(updated)
+    }
+    return { puzzle: saved ? newPuzzle : null, success: saved }
   }
 
   function deletePuzzle(id) {

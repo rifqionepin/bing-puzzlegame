@@ -33,13 +33,17 @@ export default function AdminPanel({ puzzles, customPuzzles, onAdd, onDelete, on
     if (cropperRef.current) {
       finalImage = cropperRef.current.getCroppedImage()
     }
-    onAdd(title.trim(), finalImage)
+    const result = onAdd(title.trim(), finalImage)
     setTitle('')
     setImageData(null)
     setPreview(null)
     if (fileRef.current) fileRef.current.value = ''
     setSaving(false)
-    showToast('Puzzle added!')
+    if (result && result.success) {
+      showToast('Puzzle added!')
+    } else {
+      showToast('Image too large — storage full. Try a smaller image.')
+    }
   }
 
   function handleDelete(id) {

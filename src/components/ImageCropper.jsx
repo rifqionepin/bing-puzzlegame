@@ -61,13 +61,13 @@ const ImageCropper = forwardRef(function ImageCropper({ src }, ref) {
   useImperativeHandle(ref, () => ({
     getCroppedImage() {
       const { sx, sy, sSize } = displayToNatural(crop.x, crop.y, crop.size)
-      const size = Math.round(sSize)
+      const outSize = Math.min(Math.round(sSize), 600)
       const c = document.createElement('canvas')
-      c.width = size
-      c.height = size
+      c.width = outSize
+      c.height = outSize
       const ctx = c.getContext('2d')
-      ctx.drawImage(imgRef.current, Math.round(sx), Math.round(sy), size, size, 0, 0, size, size)
-      return c.toDataURL('image/jpeg', 0.9)
+      ctx.drawImage(imgRef.current, Math.round(sx), Math.round(sy), Math.round(sSize), Math.round(sSize), 0, 0, outSize, outSize)
+      return c.toDataURL('image/jpeg', 0.6)
     },
   }))
 
