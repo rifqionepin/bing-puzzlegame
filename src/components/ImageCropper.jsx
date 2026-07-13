@@ -49,18 +49,12 @@ const ImageCropper = forwardRef(function ImageCropper({ src }, ref) {
     setCrop({ x: (w - size) / 2, y: (h - size) / 2, size })
   }, [loaded, natural])
 
-  function displayToNatural(displayX, displayY, displaySize) {
-    const scale = natural.w / displaySize.w
-    return {
-      sx: displayX * scale,
-      sy: displayY * scale,
-      sSize: displaySize * scale,
-    }
-  }
-
   useImperativeHandle(ref, () => ({
     getCroppedImage() {
-      const { sx, sy, sSize } = displayToNatural(crop.x, crop.y, crop.size)
+      const scale = natural.w / displaySize.w
+      const sx = crop.x * scale
+      const sy = crop.y * scale
+      const sSize = crop.size * scale
       const outSize = Math.min(Math.round(sSize), 600)
       const c = document.createElement('canvas')
       c.width = outSize
