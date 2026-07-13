@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import ImageCropper from './ImageCropper'
 
 export default function AdminPanel({ puzzles, customPuzzles, onAdd, onDelete, onReset, onBack }) {
   const [title, setTitle] = useState('')
@@ -7,6 +8,7 @@ export default function AdminPanel({ puzzles, customPuzzles, onAdd, onDelete, on
   const [saving, setSaving] = useState(false)
   const [toast, setToast] = useState('')
   const fileRef = useRef(null)
+  const cropperRef = useRef(null)
 
   function showToast(msg) {
     setToast(msg)
@@ -27,7 +29,11 @@ export default function AdminPanel({ puzzles, customPuzzles, onAdd, onDelete, on
   function handleSave() {
     if (!title.trim() || !imageData) return
     setSaving(true)
-    onAdd(title.trim(), imageData)
+    let finalImage = imageData
+    if (cropperRef.current) {
+      finalImage = cropperRef.current.getCroppedImage()
+    }
+    onAdd(title.trim(), finalImage)
     setTitle('')
     setImageData(null)
     setPreview(null)
@@ -75,7 +81,7 @@ export default function AdminPanel({ puzzles, customPuzzles, onAdd, onDelete, on
             onChange={handleFileChange}
           />
           {preview && (
-            <img className="admin-upload-preview" src={preview} alt="Preview" />
+            <ImageCropper ref={cropperRef} src={preview} />
           )}
         </div>
         <button

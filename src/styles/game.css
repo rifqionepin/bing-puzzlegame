@@ -1,6 +1,6 @@
 .game {
   padding: 16px;
-  max-width: 500px;
+  max-width: 650px;
   margin: 0 auto;
   min-height: 100dvh;
   display: flex;
@@ -83,6 +83,7 @@
   background: #FFF;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: 100%;
 }
 
 .piece-pool-label {
@@ -212,16 +213,13 @@
 }
 
 @media (min-width: 600px) {
-  .game-area {
-    flex-direction: row;
-    align-items: flex-start;
-  }
   .puzzle-grid {
-    flex: 1;
-    max-width: 350px;
+    max-width: 400px;
+    margin: 0 auto;
   }
   .piece-pool {
-    flex: 0 0 180px;
-    align-self: stretch;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
   }
 }

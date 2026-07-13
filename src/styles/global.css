@@ -13,7 +13,7 @@ html {
 
 body {
   font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #FFF8E1;
+  background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 50%, #FFE082 100%);
   color: #333;
   min-height: 100dvh;
   overflow-x: hidden;

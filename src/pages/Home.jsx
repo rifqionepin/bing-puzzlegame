@@ -20,7 +20,7 @@ export default function Home() {
           <p>Ask a grown-up to add some!</p>
         </div>
       ) : (
-        <div className="puzzle-grid">
+        <div className="home-grid">
           {puzzles.map(puzzle => (
             <PuzzleCard key={puzzle.id} puzzle={puzzle} />
           ))}
